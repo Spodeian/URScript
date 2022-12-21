@@ -1,0 +1,26 @@
+[package]
+name = "ur5"
+version = "0.1.0"
+authors = ["Liam L"]
+edition = "2021"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+num = {version = "0.4.0", default-features = false}
+nalgebra = {version = "0.31.4", features = ["libm"]}
+# ascii = "1.1.0"
+
+[badges]
+maintenance = {status = "none"}
+
+[features]
+tcp = []
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+# target-cpu = "native"
+# panic = "abort"
