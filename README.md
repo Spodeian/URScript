@@ -1,4 +1,4 @@
-# ur5
+# URScript
 
 A library enabling efficient and effective control of UR5 cobots, in std and no_std environments.
 
