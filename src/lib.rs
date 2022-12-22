@@ -1,7 +1,7 @@
 #![no_std]
 
 /*!
-# URScript
+# URScript for Rust
 
 A library enabling efficient and effective control of UR e-series cobots, in std and no_std environments.
 

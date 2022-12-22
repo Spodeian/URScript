@@ -1,4 +1,4 @@
-# ur5
+# URScript for Rust
 
 A library enabling efficient and effective control of UR5 cobots, in std and no_std environments.
 
@@ -21,17 +21,17 @@ Add this to your `Cargo.toml`:
 ```toml
 [dependencies]
 // Replace * with latest version
-ur5 = "*"
+ur_script = "*"
 ```
 
 ## Features
 
-This crate can be used without the standard library (`#![no_std]`) by disabling the default `std` feature. Use this in `Cargo.toml`:
+This crate can be used with the standard library by enabling the `std` feature and optionally disabling the default `libm` feature. Use this in `Cargo.toml`:
 
 ```toml
-[dependencies.ur5]
+[dependencies.ur_script]
 // Replace * with latest version
-ur5 = "*"
+ur_script = "*"
 default-features = false
 ```
 

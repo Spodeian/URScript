@@ -3,9 +3,13 @@ name = "ur_script"
 version = "0.1.0"
 authors = ["Liam L"]
 edition = "2021"
-description = "UR5 controller written in rust. Designed to be deployable on embedded systems without access to std."
+description = "UR e-series controller written in rust. Designed to be deployable on embedded systems without access to std."
+readme = "README.md"
 repository = "https://github.com/Spodeian/URScript"
-publish = false
+keywords = ["e-series", "PolyScope", "Universal Robots", "UR", "URScript"]
+catagories = ["concurrency", "data-structures", "embedded", "no-std", "science::robotics"]
+# exclude = ["/benches", "/examples", "/tests"]
+publish = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -15,10 +19,10 @@ nalgebra = {version = "0.31.4", default-features = false}
 # ascii = "1.1.0"
 
 [badges]
-maintenance = {status = "none"}
+maintenance = {status = "actively-developed"}
 
 [features]
-default = ["std"]
+default = ["libm"]
 std = ["num/std", "nalgebra/std"]
 libm = ["num/libm", "nalgebra/libm"]
 # alloc = ["num/alloc", "nalgebra/alloc"]
