@@ -1,6 +1,6 @@
 [package]
 name = "ur-script"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Liam L"]
 edition = "2021"
 description = "UR e-series controller written in rust. Designed to be deployable on embedded systems without access to std."
