@@ -1,5 +1,5 @@
 [package]
-name = "ur_script"
+name = "ur-script"
 version = "0.1.0"
 authors = ["Liam L"]
 edition = "2021"
