@@ -1,17 +1,17 @@
 [package]
-name = "ur5"
+name = "ur_script"
 version = "0.1.0"
 authors = ["Liam L"]
 edition = "2021"
 description = "UR5 controller written in rust. Designed to be deployable on embedded systems without access to std."
-repository = "https://github.com/Spodeian/UR5"
+repository = "https://github.com/Spodeian/URScript"
 publish = false
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-num = {version = "0.4.0", default-features = false, features = ["libm"]}
-nalgebra = {version = "0.31.4", default-features = false, features = ["libm"]}
+num = {version = "0.4.0", default-features = false}
+nalgebra = {version = "0.31.4", default-features = false}
 # ascii = "1.1.0"
 
 [badges]
@@ -20,6 +20,7 @@ maintenance = {status = "none"}
 [features]
 default = ["std"]
 std = ["num/std", "nalgebra/std"]
+libm = ["num/libm", "nalgebra/libm"]
 # alloc = ["num/alloc", "nalgebra/alloc"]
 # tcp = []
 

@@ -1,4 +1,4 @@
-use nalgebra::{Vector3, Isometry3};
+use nalgebra::{Isometry3, Vector3};
 
 #[test]
 fn rot() {
@@ -7,5 +7,5 @@ fn rot() {
 	let h = Isometry3::new(p, r);
 	// let a = h.rotation.scaled_axis();
 
-    assert_eq!(p, h.translation.vector);
+	assert_eq!(p, h.translation.vector);
 }
