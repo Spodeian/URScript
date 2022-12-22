@@ -32,7 +32,7 @@ This crate can be used with the standard library by enabling the `std` feature a
 [dependencies.ur_script]
 // Replace * with latest version
 ur_script = "*"
-default-features = false
+features = ["std"]
 ```
 
 The `libm` feature allows for the usage of `floats` in `no_std` builds.
