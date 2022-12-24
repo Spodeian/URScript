@@ -1,6 +1,6 @@
 [package]
 name = "ur-script"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Liam L"]
 edition = "2021"
 description = "UR e-series controller written in rust. Designed to be deployable on embedded systems without access to std."
@@ -8,7 +8,7 @@ readme = "README.md"
 repository = "https://github.com/Spodeian/URScript"
 license = "CC-BY-NC-4.0"
 keywords = ["e-series", "PolyScope", "Universal-Robots", "UR", "URScript"]
-catagories = ["concurrency", "data-structures", "embedded", "no-std", "science::robotics"]
+categories = ["concurrency", "data-structures", "embedded", "no-std", "science::robotics"]
 # exclude = ["/benches", "/examples", "/tests"]
 publish = true
 
