@@ -6,16 +6,20 @@ on:
   pull_request:
     branches: [ "master" ]
 
-env: 
+env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  rustup:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: update
-      run: rustup update
+  # rustup:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Update
+  #     run: rustup update
+  #   - name: Install fmt
+  #     run: rustup component add rustfmt
+  #   - name: Install clippy
+  #     run: rustup component add clippy
   check-fmt:
     runs-on: ubuntu-latest
     steps:
@@ -26,8 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Install clippy
-      run: rustup component add clippy
     - name: Run clippy
       run: cargo clippy
   build:
