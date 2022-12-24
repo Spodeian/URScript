@@ -20,19 +20,19 @@ jobs:
   #     run: rustup component add rustfmt
   #   - name: Install clippy
   #     run: rustup component add clippy
-  check-fmt:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Check formatting
-      run: cargo fmt -- --check
+  # check-fmt:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Check formatting
+  #     run: cargo fmt -- --check
   clippy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Run clippy
       run: cargo clippy
-  build:
+  builds:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
