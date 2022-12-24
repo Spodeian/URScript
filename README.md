@@ -1,6 +1,6 @@
 # URScript for Rust
 
-[![.github/workflows/rust.yml](https://github.com/Spodeian/URScript/actions/workflows/rust.yml/badge.svg?branch=master)](https://github.com/Spodeian/URScript/actions/workflows/rust.yml)
+[![Cargo Build & Test](https://github.com/Spodeian/URScript/actions/workflows/rust.yml/badge.svg)](https://github.com/Spodeian/URScript/actions/workflows/rust.yml)
 
 A library enabling efficient and effective control of UR5 cobots, in `std` and `no_std` environments.
 
