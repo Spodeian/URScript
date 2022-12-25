@@ -22,6 +22,7 @@ This library is aiming to provide:
 ```
 # #[cfg(any(feature = "std", feature = "libm"))]
 use ur_script::vars::pose::*;
+# #[cfg(any(feature = "std", feature = "libm"))]
 use core::f32::consts::PI;
 
 # #[cfg(any(feature = "std", feature = "libm"))]
@@ -42,6 +43,10 @@ println!("{}", target2);
 The `ur_script` crate is tested for:
 * rustc 1.65.0
 * [URScript 5.12](https://www.universal-robots.com/download/manuals-e-series/script/script-manual-e-series-sw-512)
+
+## Further Reading
+* [URScript](https://www.universal-robots.com/download/?filters[]=98761&query=)
+* [Interfaces](https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces)
 */
 
 #![deny(

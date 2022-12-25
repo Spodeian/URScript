@@ -41,6 +41,10 @@ The `libm` feature allows for the usage of `floats` in `no_std` builds.
 
 More features to come as this library is developed.
 
+## Further Reading
+* [URScript](https://www.universal-robots.com/download/?filters[]=98761&query=)
+* [Interfaces](https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces)
+
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
