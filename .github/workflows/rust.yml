@@ -26,33 +26,33 @@ jobs:
   #   - uses: actions/checkout@v3
   #   - name: Check formatting
   #     run: cargo fmt -- --check
-  clippy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Run clippy
-      run: cargo clippy
+  # clippy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Run clippy
+  #     run: cargo clippy
   builds:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build (no features)
-      run: cargo build --no-default-features;
+    # - name: Build (no features)
+    #   run: cargo build --no-default-features;
     - name: Build (default features)
       run: cargo build;
     - name: Build (std)
       run: cargo build --features std;
-    - name: Build (all features)
-      run: cargo build --all-features;
+    # - name: Build (all features)
+    #   run: cargo build --all-features;
   tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Test (no features)
-      run: cargo test --no-default-features;
+    # - name: Test (no features)
+    #   run: cargo test --no-default-features;
     - name: Test (default features)
       run: cargo test;
     - name: Test (std)
       run: cargo test --features std;
-    - name: Test (all features)
-      run: cargo test --all-features;
+    # - name: Test (all features)
+    #   run: cargo test --all-features;
