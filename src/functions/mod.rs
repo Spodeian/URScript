@@ -5,5 +5,4 @@ pub mod interfaces;
 pub mod internals;
 pub mod ioconfiguration;
 pub mod motion;
-pub mod processpath;
 pub mod urmath;

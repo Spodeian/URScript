@@ -1,2 +1,2 @@
-
+//! Functions for controlling motion
 
