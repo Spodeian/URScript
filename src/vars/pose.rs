@@ -24,6 +24,7 @@ where
 	T: Float + RealField,
 {
 	/// Creates and initialises a Pose using scaled axis-angle format.
+	#[must_use]
 	pub fn new_pose(x: T, y: T, z: T, ax: T, ay: T, az: T) -> Self {
 		Self(Isometry3::new(
 			Vector3::new(x, y, z),
@@ -33,12 +34,14 @@ where
 
 	/// Creates and initialises a Pose with only a position, and no orientation.
 	/// This is especially useful for generating new targets relative to a home position.
+	#[must_use]
 	pub fn new_pos(x: T, y: T, z: T) -> Self {
 		Self(Isometry3::translation(x, y, z))
 	}
 
 	/// Creates and initialises a Pose with only an orientation, and position.
 	/// This is useful for rotating targets without moving them.
+	#[must_use]
 	pub fn new_rot(ax: T, ay: T, az: T) -> Self {
 		Self(Isometry3::rotation(Vector3::new(ax, ay, az)))
 	}

@@ -9,7 +9,6 @@ repository = "https://github.com/Spodeian/URScript"
 license = "CC-BY-NC-4.0"
 keywords = ["e-series", "PolyScope", "Universal-Robots", "UR", "URScript"]
 categories = ["concurrency", "data-structures", "embedded", "no-std", "science::robotics"]
-# exclude = ["/benches", "/examples", "/tests"]
 publish = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -27,6 +26,7 @@ default = ["libm"]
 std = ["num/std", "nalgebra/std"]
 libm = ["num/libm", "nalgebra/libm"]
 # alloc = ["num/alloc", "nalgebra/alloc"]
+traits = []
 # tcp = []
 
 [profile.release]

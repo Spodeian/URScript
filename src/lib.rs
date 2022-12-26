@@ -62,11 +62,14 @@ The `ur_script` crate is tested for:
 	missing_copy_implementations
 )]
 
-pub mod vars;
-// pub mod functions;
+pub(crate) mod traits;
 
-// #[cfg(feature = "tcp")]
-// pub mod control;
+pub mod vars;
+pub mod functions;
+pub mod control;
 
 #[cfg(any(feature = "std", feature = "libm"))]
 pub use vars::pose::Pose;
+
+#[cfg(feature = "traits")]
+pub use traits;
