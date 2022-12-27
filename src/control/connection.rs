@@ -66,25 +66,55 @@ impl Meta {
 	}
 }
 
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
+enum Host<'a> {
+	IP(&'a [u8; 4]),
+	Hostname(&'a str),
+}
+
+impl Host<'static> {
+	const UNSPECIFIED: [u8; 4] = [0; 4];
+}
+
+impl Default for Host<'static> {
+	fn default() -> Self {
+		Host::IP(&Host::UNSPECIFIED)
+	}
+}
+
 /// Connection to a specific robot.
 #[non_exhaustive]
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
-pub struct Connection {
-	meta: Meta,
+pub struct Connection<'a> {
 	port: u16,
-	ip: [u8; 4],
+	host: Host<'a>,
+	meta: Meta,
 }
 
-impl Connection {
-	/// Creates and initialises a Connection.
+impl<'a> Connection<'a> {
+	/// Creates and initialises a connection.
 	/// It is assumed you will create a connection with a working ip address.
 	#[must_use]
-	pub fn new(interface: Interface, mode: Mode, ip: [u8; 4]) -> Self {
+	pub fn new_ip(interface: Interface, mode: Mode, ip: &'a [u8; 4]) -> Self {
 		let meta = Meta { interface, mode };
 		Self {
 			meta,
 			port: meta.port(),
-			ip,
+			host: Host::IP(ip),
+		}
+	}
+
+	/// Creates and initialises a connection.
+	/// It is assumed you will create a connection with a correct hostname connected to a DNS.
+	/// The hostname of the robot by default is (ur-'serial number').
+	/// The serial number is an 11 or 10 digit base-10 number representing manufacturing information.
+	#[must_use]
+	pub fn new_hostname(interface: Interface, mode: Mode, hostname: &'a str) -> Self {
+		let meta = Meta { interface, mode };
+		Self {
+			meta,
+			port: meta.port(),
+			host: Host::Hostname(hostname),
 		}
 	}
 
@@ -108,18 +138,33 @@ impl Connection {
 
 	/// The IP adress of the robot.
 	#[must_use]
-	pub fn ip_octet(&self) -> [u8; 4] {
-		self.ip
+	pub fn ip_octet(&self) -> Option<&[u8; 4]> {
+		if let Host::IP(octet) = self.host {
+			Some(octet)
+		} else {
+			None
+		}
+	}
+
+	/// The hostname of the robot (ur-'serial number').
+	/// The serial number is an 11 or 10 digit base-10 number representing manufacturing information.
+	#[must_use]
+	pub fn host_name(&self) -> Option<&str> {
+		if let Host::Hostname(host) = self.host {
+			Some(host)
+		} else {
+			None
+		}
 	}
 }
 
-impl Default for Connection {
+impl Default for Connection<'static> {
 	fn default() -> Self {
 		let meta = Meta::default();
 		Self {
 			meta,
 			port: meta.port(),
-			ip: [0, 0, 0, 0],
+			host: Host::default(),
 		}
 	}
 }
